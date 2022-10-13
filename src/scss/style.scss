@@ -1,0 +1,65 @@
+@import "reset";
+@import "fonts";
+@import "base/var";
+@import "base/ibg";
+@import "libs/slick";
+
+:root > svg {
+	display: none;
+}
+
+:root > svg:target {
+	display: block;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+}
+
+body {
+	font-family: $fontMain;
+	&._active {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.page {
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+[class*="__container"] {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0px 15px;
+	position: relative;
+	@media (max-width: $md1 + px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2 + px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3 + px) {
+		max-width: none;
+	}
+}
+
+@import "blocks/header";
+@import "blocks/social";
+@import "blocks/promo";
+@import "blocks/how";
+@import "blocks/deals";
+
+@import "blocks/footer";

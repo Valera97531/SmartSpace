@@ -1,0 +1,111 @@
+.how {
+	padding: 220px 0rem 100px 0rem;
+	@media (max-width: $md3 + px) {
+		padding: 150px 0rem 100px 0rem;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 2.5rem;
+		text-align: center;
+		margin: 0rem 0rem 70px 0rem;
+	}
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(auto, 260px));
+		row-gap: 50px;
+		justify-content: space-between;
+		text-align: center;
+		@media (max-width: $md1 + px) {
+			grid-template-columns: repeat(3, minmax(auto, 280px));
+		}
+		@media (max-width: $md2 + px) {
+			grid-template-columns: repeat(2, minmax(auto, 45%));
+		}
+		@media (max-width: $md3 + px) {
+			justify-content: center;
+			grid-template-columns: 80%;
+		}
+		@media (max-width: $md3 + px) {
+			grid-template-columns: 100%;
+		}
+	}
+}
+
+.item-how {
+	&__icon {
+		position: relative;
+		width: 90px;
+		height: 90px;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto 50px;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+		&-1 {
+			background: #9672ff;
+			box-shadow: 0px 100px 80px rgba(150, 114, 255, 0.07), 0px 64.8148px 46.8519px rgba(150, 114, 255, 0.0531481),
+				0px 38.5185px 25.4815px rgba(150, 114, 255, 0.0425185), 0px 20px 13px rgba(150, 114, 255, 0.035),
+				0px 8.14815px 6.51852px rgba(150, 114, 255, 0.0274815),
+				0px 1.85185px 3.14815px rgba(150, 114, 255, 0.0168519);
+			&:after {
+				content: url("../img/how/line1.png");
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%) scale(1);
+				right: -285px;
+				@media (max-width: $md1 + px) {
+					right: -230px;
+					transform: translateY(-50%) scale(0.8);
+				}
+				@media (max-width: $md2 + px) {
+					display: none;
+				}
+			}
+		}
+		&-2 {
+			background: #4ddffd;
+			box-shadow: 0px 100px 80px rgba(77, 223, 253, 0.07), 0px 64.8148px 46.8519px rgba(77, 223, 253, 0.0531481),
+				0px 38.5185px 25.4815px rgba(77, 223, 253, 0.0425185), 0px 20px 13px rgba(77, 223, 253, 0.035),
+				0px 8.14815px 6.51852px rgba(77, 223, 253, 0.0274815), 0px 1.85185px 3.14815px rgba(77, 223, 253, 0.0168519);
+			&:after {
+				content: url("../img/how/line2.png");
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%) scale(1);
+				right: -285px;
+				@media (max-width: $md1 + px) {
+					right: -230px;
+					transform: translateY(-50%) scale(0.8);
+				}
+				@media (max-width: $md2 + px) {
+					display: none;
+				}
+			}
+		}
+		&-3 {
+			background: #f2b8ec;
+			box-shadow: 0px 100px 80px rgba(242, 184, 236, 0.07), 0px 64.8148px 46.8519px rgba(242, 184, 236, 0.0531481),
+				0px 38.5185px 25.4815px rgba(242, 184, 236, 0.0425185), 0px 20px 13px rgba(242, 184, 236, 0.035),
+				0px 8.14815px 6.51852px rgba(242, 184, 236, 0.0274815),
+				0px 1.85185px 3.14815px rgba(242, 184, 236, 0.0168519);
+		}
+		svg {
+			width: 25px;
+			height: 25px;
+			fill: #fff;
+		}
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 1.375rem;
+		line-height: 30px;
+		text-transform: capitalize;
+		margin: 0rem 0rem 0.8rem 0rem;
+	}
+	&__text {
+		font-weight: 400;
+		line-height: 1.625;
+		color: #333333;
+	}
+}

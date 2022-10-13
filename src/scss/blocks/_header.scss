@@ -1,0 +1,167 @@
+.header {
+	width: 100%;
+	z-index: 200;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		min-height: 103px;
+		align-items: center;
+		padding: 10px 0px;
+	}
+	&__logo {
+		font-size: 1.4375rem;
+		font-weight: 800;
+		color: #31353b;
+		position: relative;
+	}
+	&__burger {
+		display: none;
+	}
+	@media (max-width: $md3 + px) {
+		&__wrapper {
+			min-height: 80px;
+		}
+		&__burger {
+			display: block;
+			width: 30px;
+			height: 14px;
+			position: relative;
+			z-index: 10;
+			cursor: pointer;
+			& > span {
+				position: absolute;
+				background: #000;
+				height: 2px;
+				width: 100%;
+				border-radius: 5px;
+				&:first-child {
+					left: 0;
+					width: 60%;
+				}
+				&:nth-child(2) {
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+				}
+				&:last-child {
+					width: 60%;
+					bottom: 0;
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+.menu {
+	&__close {
+		display: none;
+	}
+	&__list {
+		display: flex;
+	}
+	&__item {
+		&:not(:last-child) {
+			margin: 0px 46px 0px 0px;
+		}
+	}
+	&__link {
+		font-size: 0.8125rem;
+		font-family: $fontMenu;
+		font-weight: 700;
+		color: #000;
+		transition: all 0.4s ease 0s;
+		position: relative;
+		@media (min-width: $md3 + px) {
+			&:before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 1px;
+				background-color: $colorBtn;
+				left: 0;
+				bottom: 0;
+				clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+				transition: clip-path 0.4s ease 0s;
+			}
+			&:hover {
+				color: $colorBtn;
+				&:before {
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				}
+			}
+		}
+	}
+	@media (max-width: $md3 + px) {
+		&__item {
+			&:not(:last-child) {
+				margin: 0px 25px 0px 0px;
+			}
+		}
+	}
+	@media (max-width: $md3 + px) {
+		// display: none;
+		position: fixed;
+		width: 280px;
+		height: 100vh;
+		background: rgba(0, 0, 0, 1);
+		right: 0;
+		top: 0;
+		z-index: 100;
+		transform: translateX(100%);
+		transition: transform 0.5s ease 0s;
+		&._active {
+			transition: transform 0.5s ease 0s;
+			transform: translateX(0);
+		}
+		&__close {
+			display: block;
+			position: absolute;
+			cursor: pointer;
+			left: 1rem;
+			top: 2rem;
+			svg#cross {
+				width: 1.5rem;
+				height: 1.5rem;
+				fill: #fff;
+			}
+		}
+		&__list {
+			flex-direction: column;
+			padding: 80px 0px 0px 0px;
+		}
+		&__item {
+			&:not(:last-child) {
+				margin: 0;
+			}
+		}
+		&__link {
+			display: block;
+			padding: 0.8rem 1rem;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 0.5rem;
+				background: $colorBtn;
+				transition: all 0.3s ease 0s;
+				opacity: 0;
+				visibility: hidden;
+			}
+			&:hover {
+				color: $colorBtn;
+				padding: 0.8rem 1.5rem;
+				&:before {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
