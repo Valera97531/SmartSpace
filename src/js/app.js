@@ -36,6 +36,27 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 
+	const tabNavItems = document.querySelectorAll('.tabs-deals__button'),
+		tabItemsInner = document.querySelectorAll('.tabs-deals__inner');
+	document.addEventListener('click', function (e) {
+		const targetElement = e.target;
+		let currentActiveIndex = null,
+			newActiveIndex = null;
+		if (targetElement.closest('.tabs-deals__button')) {
+			tabNavItems.forEach((tabNavItem, index) => {
+				if (tabNavItem.classList.contains('_active')) {
+					currentActiveIndex = index;
+					tabNavItem.classList.remove('_active');
+				}
+				if (tabNavItem === targetElement) {
+					newActiveIndex = index;
+				}
+			});
+			targetElement.classList.add('_active');
+			tabItemsInner[newActiveIndex].classList.add('_active');
+			tabItemsInner[currentActiveIndex].classList.remove('_active');
+		}
+	});
 });
 
 
