@@ -35,6 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	// const menuItemLink = document.querySelectorAll('.nav .menu__item[href="#"]');
+
+	// menuItemLink.forEach(item => {
+	// 	if (item) {
+	// 		item.addEventListener('click', (e) => {
+	// 			anchorId = this.getAttribute('href');
+	// 			console.log(anchorId);
+	// 		});
+	// 	}
+	// });
+
+	// let anchors = document.querySelectorAll('.nav .menu__item[href*="#"]');
+	// let anchor;
+	// let anchorId;
+
+	// for (anchor of anchors) {
+	// 	if (anchor) {
+	// 		anchor.addEventListener('click', function (e) {
+	// 			anchorId = this.getAttribute('href');
+	// 			console.log(anchorId);
+	// 		});
+	// 	}
+	// }
 
 	const tabNavItems = document.querySelectorAll('.tabs-deals__button'),
 		tabItemsInner = document.querySelectorAll('.tabs-deals__inner');
