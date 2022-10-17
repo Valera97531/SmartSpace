@@ -1,8 +1,12 @@
+"use strict";
+
 import * as flsFunctions from "./modules/function.js";
 flsFunctions.isWebp();
 
 import $ from "jquery";
 import "slick-carousel";
+
+// carousel slick-slider
 
 $('.carousel').slick({
 	arrows: true,
@@ -13,6 +17,9 @@ $('.carousel').slick({
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	// Burger
+
 	const headerMenu = document.querySelector('.menu'),
 		headerBurger = document.querySelector('.header__burger'),
 		menuClose = document.querySelector('.menu__close'),
@@ -35,29 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	// const menuItemLink = document.querySelectorAll('.nav .menu__item[href="#"]');
+	// Smooth scroll
 
-	// menuItemLink.forEach(item => {
-	// 	if (item) {
-	// 		item.addEventListener('click', (e) => {
-	// 			anchorId = this.getAttribute('href');
-	// 			console.log(anchorId);
-	// 		});
-	// 	}
-	// });
+	const smoothLinks = document.querySelectorAll('nav a[href^="#"]');
+	for (let smoothLink of smoothLinks) {
+		smoothLink.addEventListener('click', function (e) {
+			e.preventDefault();
+			const id = smoothLink.getAttribute('href');
 
-	// let anchors = document.querySelectorAll('.nav .menu__item[href*="#"]');
-	// let anchor;
-	// let anchorId;
+			document.querySelector(id).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		});
+	};
 
-	// for (anchor of anchors) {
-	// 	if (anchor) {
-	// 		anchor.addEventListener('click', function (e) {
-	// 			anchorId = this.getAttribute('href');
-	// 			console.log(anchorId);
-	// 		});
-	// 	}
-	// }
+	// Tabs
 
 	const tabNavItems = document.querySelectorAll('.tabs-deals__button'),
 		tabItemsInner = document.querySelectorAll('.tabs-deals__inner');
