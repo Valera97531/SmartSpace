@@ -59,27 +59,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Tabs
 
-	const tabNavItems = document.querySelectorAll('.tabs-deals__button'),
-		tabItemsInner = document.querySelectorAll('.tabs-deals__inner');
-	document.addEventListener('click', function (e) {
-		const targetElement = e.target;
-		let currentActiveIndex = null,
-			newActiveIndex = null;
-		if (targetElement.closest('.tabs-deals__button')) {
-			tabNavItems.forEach((tabNavItem, index) => {
-				if (tabNavItem.classList.contains('_active')) {
-					currentActiveIndex = index;
-					tabNavItem.classList.remove('_active');
-				}
-				if (tabNavItem === targetElement) {
-					newActiveIndex = index;
-				}
-			});
-			targetElement.classList.add('_active');
-			tabItemsInner[newActiveIndex].classList.add('_active');
-			tabItemsInner[currentActiveIndex].classList.remove('_active');
-		}
+	const tabNavItem = document.querySelector('.tabs-deals__nav'),
+		tabNavBtn = document.querySelectorAll('.tabs-deals__button'),
+		tabInner = document.querySelectorAll('.tabs-deals__inner');
+
+	if (tabNavItem) {
+		tabNavItem.addEventListener('click', (e) => {
+			if (e.target.classList.contains('tabs-deals__button')) {
+				const tabsPath = e.target.dataset.tabsPath;
+				tabsHandler(tabsPath);
+			}
+		});
+	}
+
+	const tabsHandler = (e) => {
+		tabNavBtn.forEach(item => {
+			item.classList.remove('_active');
+		});
+		document.querySelector(`[data-tabs-path="${e}"]`).classList.add('_active');
+
+		tabInner.forEach(item => {
+			item.classList.remove('_active');
+		});
+		document.querySelector(`[data-tabs-target="${e}"]`).classList.add('_active');
+	}
+
+	// Popup 
+
+	const itemFeaturedBtn = document.querySelector('.item-featured__btn'),
+		popupClose = document.querySelector('.popup__close'),
+		popup = document.querySelector('.popup');
+
+	itemFeaturedBtn.addEventListener('click', () => {
+		popup.classList.add('_active');
 	});
+
+	popupClose.addEventListener('click', () => {
+		popup.classList.remove('_active');
+	});
+
 });
 
 

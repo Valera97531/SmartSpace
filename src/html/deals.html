@@ -15,23 +15,23 @@
 					<a href="#">View All Property</a>
 				</div>
 			</div>
-			<div data-tabs class="deals__tabs tabs-deals">
-				<nav data-tabs-titles class="tabs-deals__nav">
-					<button type="button" class="tabs-deals__button _active">
+			<div class="deals__tabs tabs-deals">
+				<nav class="tabs-deals__nav">
+					<button data-tabs-path="residential" type="button" class="tabs-deals__button _active">
 						Residential Property
 					</button>
-					<button type="button" class="tabs-deals__button">
+					<button data-tabs-path="commercial" type="button" class="tabs-deals__button">
 						Commercial Property
 					</button>
-					<button type="button" class="tabs-deals__button">
+					<button data-tabs-path="agriculture" type="button" class="tabs-deals__button">
 						Agriculture Property
 					</button>
-					<button type="button" class="tabs-deals__button">
+					<button data-tabs-path="industrial" type="button" class="tabs-deals__button">
 						Industrial Property
 					</button>
 				</nav>
-				<div data-tabs-body class="tabs-deals__content">
-					<div class="tabs-deals__inner _active">
+				<div class="tabs-deals__content">
+					<div data-tabs-target="residential" class="tabs-deals__inner _active">
 						<div class="tabs-deals__body">
 							<a href="#" class="tabs-deals__image">
 								<img src="img/deals/deals1.jpg" alt="deals 1">
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="tabs-deals__inner">
+					<div data-tabs-target="commercial" class="tabs-deals__inner">
 						<div class="tabs-deals__body">
 							<a href="#" class="tabs-deals__image">
 								<img src="img/deals/deals1.jpg" alt="deals 1">
@@ -78,7 +78,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="tabs-deals__inner">
+					<div data-tabs-target="agriculture" class="tabs-deals__inner">
 						<div class="tabs-deals__body">
 							<a href="#" class="tabs-deals__image">
 								<img src="img/deals/deals2.jpg" alt="deals 2">
@@ -97,7 +97,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="tabs-deals__inner">
+					<div data-tabs-target="industrial" class="tabs-deals__inner">
 						<div class="tabs-deals__body">
 							<a href="#" class="tabs-deals__image">
 								<img src="img/deals/deals1.jpg" alt="deals 1">
